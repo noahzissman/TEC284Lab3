@@ -28,6 +28,7 @@ void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(A6, INPUT);
+  pinMode(4, OUTPUT);
   int lightLevel = analogRead(A6);
   Serial.begin(9600);
   Serial.println(lightLevel);
@@ -40,6 +41,9 @@ Serial.println(lightLevel);
 
 if (lightLevel < 100) {
   Serial.println("It's really dark!");
+  digitalWrite(4, HIGH);
+
+} else digitalWrite(4, LOW); {
 } else if (lightLevel < 200) {
   Serial.println("It's dim in here.");
 } else if (lightLevel < 700) {
